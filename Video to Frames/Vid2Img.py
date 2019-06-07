@@ -16,9 +16,10 @@ success, image = video.read()
 count = 0
 success = True
 while success:
-    cv2.imwrite(justName + "-frame%d.png" % count, image)
+    cv2.imwrite(justName + "-frame%d.jpg" % count, image)
     success, image = video.read()
-    print('Read a new frame: ', success)
+    if success:
+        print('Reading frame', count+1)
     count += 1
 
 
